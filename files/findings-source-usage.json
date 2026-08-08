@@ -1,0 +1,56 @@
+﻿[
+  {
+    "file": "D:\\Agent\\src\\services\\automationPipeline.ts",
+    "line_number": 31,
+    "snippet": "public static generatePaymentInvoiceLink(title: string, amountUSD: number, config: PaymentGatewayConfig)",
+    "purpose_tags": ["payment-link","payment-generation","stripe","paypal"]
+  },
+  {
+    "file": "D:\\Agent\\src\\services\\automationPipeline.ts",
+    "line_number": 63,
+    "snippet": "paymentUrl = config.stripeAccountId.trim() ? `https://buy.stripe.com/pay_${Math.random().toString(36).substring(2, 10)}?client_id=${config.stripeAccountId}&amount=${amountUSD * 100}`",
+    "purpose_tags": ["stripe","payment-link","generate"]
+  },
+  {
+    "file": "D:\\Agent\\src\\services\\automationPipeline.ts",
+    "line_number": 91,
+    "snippet": "public static async dispatchToWebhook(webhookUrl: string, payload: {...})",
+    "purpose_tags": ["webhook","dispatch","external-network","fetch"]
+  },
+  {
+    "file": "D:\\Agent\\src\\services\\automationPipeline.ts",
+    "line_number": 106,
+    "snippet": "if (webhookUrl.includes('discord.com/api/webhooks')) { await fetch(webhookUrl, { method: 'POST', headers: {...}, body: JSON.stringify({ username: 'Agentic Wealth Bot', embeds: [...] }) }); } else { await fetch(webhookUrl, { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(payload) }); }",
+    "purpose_tags": ["webhook","discord","fetch","http-post"]
+  },
+  {
+    "file": "D:\\Agent\\src\\services\\liveSearchService.ts",
+    "line_number": 37,
+    "snippet": "public static async fetchLiveJobs(query: string = 'react'): Promise<LiveJobListing[]> { const response = await fetch('https://remotive.com/api/remote-jobs?limit=8'); ... }",
+    "purpose_tags": ["live-fetch","external-api","fetch","jobs-api"]
+  },
+  {
+    "file": "D:\\Agent\\src\\services\\liveSearchService.ts",
+    "line_number": 65,
+    "snippet": "const hnRes = await fetch('https://hacker-news.firebaseio.com/v0/showstories.json');",
+    "purpose_tags": ["live-fetch","external-api","fetch","hn-api"]
+  },
+  {
+    "file": "D:\\Agent\\src\\App.tsx",
+    "line_number": 158,
+    "snippet": "const executor = new AgentExecutor(agentId, goal, ..., config.geminiApiKey)",
+    "purpose_tags": ["LLM-client-config","gemini","config","credential-reference"]
+  },
+  {
+    "file": "D:\\Agent\\src\\App.tsx",
+    "line_number": 185,
+    "snippet": "AutomationPipeline.dispatchToWebhook(webhookConfig.webhookUrl, { type: newDeliv.type, title: newDeliv.title, ... })",
+    "purpose_tags": ["webhook","auto-dispatch","automation"]
+  },
+  {
+    "file": "D:\\Agent\\src\\components\\Navbar.tsx",
+    "line_number": 33,
+    "snippet": "const [tempApiKey, setTempApiKey] = useState(config.geminiApiKey);",
+    "purpose_tags": ["credential","gemini","LLM-client"]
+  }
+]

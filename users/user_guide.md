@@ -1,0 +1,1 @@
+﻿[Project findings artifacts placeholder]
